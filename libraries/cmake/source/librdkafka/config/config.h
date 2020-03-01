@@ -3,27 +3,24 @@
 #define _CONFIG_H_
 // distro
 #define SOLIB_EXT ".so"
-#define ARCH "x86_64"
+#define ARCH "aarch64"
 #define CPU "generic"
 #define WITHOUT_OPTIMIZATION 0
 #define ENABLE_SSL 1
-#define ENABLE_GSSAPI 0
+#define ENABLE_GSSAPI 1
 #define ENABLE_DEVEL 0
 #define ENABLE_VALGRIND 0
 #define ENABLE_REFCNT_DEBUG 0
 #define ENABLE_SHAREDPTR_DEBUG 0
-#define ENABLE_LZ4_EXT 0
-#define ENABLE_LZ4_EXT 0
-#define ENABLE_GSSAPI 0
-#define ENABLE_GSSAPI 0
-#define ENABLE_LZ4_EXT 0
+#define ENABLE_LZ4_EXT 1
+#define ENABLE_LZ4_EXT 1
 #define WITH_STATIC_LINKING 1
 #define MKL_APP_NAME "librdkafka"
 #define MKL_APP_DESC_ONELINE "The Apache Kafka C/C++ library"
-// gcc
-#define WITH_GCC 1
-// gxx
-#define WITH_GXX 1
+// ccenv
+#define WITH_CC 1
+// cxxenv
+#define WITH_CXX 1
 // pkgconfig
 #define WITH_PKGCONFIG 1
 // install
@@ -60,8 +57,6 @@
 #define WITH_SNAPPY 1
 // WITH_SOCKEM
 #define WITH_SOCKEM 1
-// crc32chw
-#define WITH_CRC32C_HW 1
 // regex
 #define HAVE_REGEX 1
 // strndup
@@ -73,5 +68,5 @@
 // python
 #define HAVE_PYTHON 1
 // BUILT_WITH
-#define BUILT_WITH "STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS LIBDL PLUGINS HDRHISTOGRAM SNAPPY SOCKEM CRC32C_HW"
+#define BUILT_WITH "STATIC_LINKING CC CXX PKGCONFIG INSTALL GNULD LDS LIBDL PLUGINS HDRHISTOGRAM SNAPPY SOCKEM"
 #endif /* _CONFIG_H_ */

@@ -1,11 +1,11 @@
 /* Created by config.links - do not edit */
-/* Host: x86_64-pc-linux-gnu */
+/* Host: aarch64-unknown-linux-gnu */
 static char mod_source_info[] =
-  ":generic/mpih-add1.c"
-  ":generic/mpih-sub1.c"
-  ":generic/mpih-mul1.c"
-  ":generic/mpih-mul2.c"
-  ":generic/mpih-mul3.c"
+  ":aarch64/mpih-add1.S"
+  ":aarch64/mpih-sub1.S"
+  ":aarch64/mpih-mul1.S"
+  ":aarch64/mpih-mul2.S"
+  ":aarch64/mpih-mul3.S"
   ":generic/mpih-lshift.c"
   ":generic/mpih-rshift.c"
   ;

@@ -42,8 +42,6 @@ function(libgcryptMain)
     "${library_root}/cipher/cast5.c"
     "${library_root}/cipher/des.c"
     "${library_root}/cipher/rijndael.c"
-    "${library_root}/cipher/rijndael-ssse3-amd64.c"
-    "${library_root}/cipher/rijndael-aesni.c"
     "${library_root}/cipher/rijndael-padlock.c"
     "${library_root}/cipher/twofish.c"
     "${library_root}/cipher/serpent.c"
@@ -115,14 +113,9 @@ function(libgcryptMain)
     "${library_root}/src/missing-string.c"
     "${library_root}/src/secmem.c"
     "${library_root}/src/fips.c"
-    "${library_root}/src/hwf-x86.c"
+    "${library_root}/src/hwf-arm.c"
     "${library_root}/src/context.c"
 
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-add1.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-sub1.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul1.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul2.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul3.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-lshift.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-rshift.c"
   )
@@ -135,24 +128,18 @@ function(libgcryptMain)
   # were not enough! Make sure all the AVX/AVX2 options are off when re-generating
   # a new config file!
   set(asm_source_list
-    "${library_root}/cipher/arcfour-amd64.S"
-    "${library_root}/cipher/blowfish-amd64.S"
-    "${library_root}/cipher/cast5-amd64.S"
-    "${library_root}/cipher/des-amd64.S"
-    "${library_root}/cipher/rijndael-amd64.S"
-    "${library_root}/cipher/twofish-amd64.S"
-    "${library_root}/cipher/salsa20-amd64.S"
-
-    "${library_root}/cipher/serpent-sse2-amd64.S"
-    "${library_root}/cipher/chacha20-sse2-amd64.S"
-    "${library_root}/cipher/poly1305-sse2-amd64.S"
-    "${library_root}/cipher/whirlpool-sse2-amd64.S"
-
-    "${library_root}/cipher/rijndael-ssse3-amd64-asm.S"
-    "${library_root}/cipher/chacha20-ssse3-amd64.S"
-    "${library_root}/cipher/sha256-ssse3-amd64.S"
-    "${library_root}/cipher/sha512-ssse3-amd64.S"
-    "${library_root}/cipher/sha1-ssse3-amd64.S"
+    "${library_root}/cipher/rijndael-aarch64.S"
+    "${library_root}/cipher/rijndael-armv8-aarch64-ce.S"
+    "${library_root}/cipher/twofish-aarch64.S"
+    "${library_root}/cipher/camellia-aarch64.S"
+    "${library_root}/cipher/sha256-armv8-aarch64-ce.S"
+    "${library_root}/cipher/sha1-armv8-aarch64-ce.S"
+    
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-add1-asm.S"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-sub1-asm.S"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul1-asm.S"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul2-asm.S"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/mpi/mpih-mul3-asm.S"
   )
 
   add_custom_target(thirdparty_libgcrypt_asm)

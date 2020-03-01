@@ -26,10 +26,10 @@
 #define EGD_SOCKET_NAME ""
 
 /* Enable support for Intel AES-NI instructions. */
-#define ENABLE_AESNI_SUPPORT 1
+/* #undef ENABLE_AESNI_SUPPORT */
 
 /* Enable support for ARMv8 Crypto Extension instructions. */
-/* #undef ENABLE_ARM_CRYPTO_SUPPORT */
+#define ENABLE_ARM_CRYPTO_SUPPORT 1
 
 /* Enable support for Intel AVX2 instructions. */
 /* #undef ENABLE_AVX2_SUPPORT */
@@ -47,10 +47,10 @@
 /* #undef ENABLE_JENT_SUPPORT */
 
 /* Enable support for ARM NEON instructions. */
-/* #undef ENABLE_NEON_SUPPORT */
+#define ENABLE_NEON_SUPPORT 1
 
 /* Enable support for the PadLock engine. */
-#define ENABLE_PADLOCK_SUPPORT 1
+/* #undef ENABLE_PADLOCK_SUPPORT */
 
 /* Enable support for Intel PCLMUL instructions. */
 /* #undef ENABLE_PCLMUL_SUPPORT */
@@ -93,11 +93,11 @@
 
 /* Defined if underlying assembler is compatible with ARMv8/Aarch64 assembly
    implementations */
-/* #undef HAVE_COMPATIBLE_GCC_AARCH64_PLATFORM_AS */
+#define HAVE_COMPATIBLE_GCC_AARCH64_PLATFORM_AS 1
 
 /* Defined if underlying assembler is compatible with amd64 assembly
    implementations */
-#define HAVE_COMPATIBLE_GCC_AMD64_PLATFORM_AS 1
+/* #undef HAVE_COMPATIBLE_GCC_AMD64_PLATFORM_AS */
 
 /* Defined if underlying assembler is compatible with ARM assembly
    implementations */
@@ -111,7 +111,7 @@
 /* #undef HAVE_CPU_ARCH_ALPHA */
 
 /* Defined for ARM AArch64 platforms */
-/* #undef HAVE_CPU_ARCH_ARM */
+#define HAVE_CPU_ARCH_ARM 1
 
 /* Defined for M68k platforms */
 /* #undef HAVE_CPU_ARCH_M68K */
@@ -126,7 +126,7 @@
 /* #undef HAVE_CPU_ARCH_SPARC */
 
 /* Defined for the x86 platforms */
-#define HAVE_CPU_ARCH_X86 1
+/* #undef HAVE_CPU_ARCH_X86 */
 
 /* Define to 1 if you have the declaration of `sys_siglist', and to 0 if you
    don't. */
@@ -168,20 +168,20 @@
 
 /* Defined if compiler supports "__attribute__ ((ms_abi))" function attribute
    */
-#define HAVE_GCC_ATTRIBUTE_MS_ABI 1
+/* #undef HAVE_GCC_ATTRIBUTE_MS_ABI */
 
 /* Defined if a GCC style "__attribute__ ((packed))" is supported */
 #define HAVE_GCC_ATTRIBUTE_PACKED 1
 
 /* Defined if compiler supports "__attribute__ ((sysv_abi))" function
    attribute */
-#define HAVE_GCC_ATTRIBUTE_SYSV_ABI 1
+/* #undef HAVE_GCC_ATTRIBUTE_SYSV_ABI */
 
 /* Defined if default calling convention is 'ms_abi' */
 /* #undef HAVE_GCC_DEFAULT_ABI_IS_MS_ABI */
 
 /* Defined if default calling convention is 'sysv_abi' */
-#define HAVE_GCC_DEFAULT_ABI_IS_SYSV_ABI 1
+/* #undef HAVE_GCC_DEFAULT_ABI_IS_SYSV_ABI */
 
 /* Defined if inline assembler supports AArch32 Crypto Extension instructions
    */
@@ -189,10 +189,10 @@
 
 /* Defined if inline assembler supports AArch64 Crypto Extension instructions
    */
-/* #undef HAVE_GCC_INLINE_ASM_AARCH64_CRYPTO */
+#define HAVE_GCC_INLINE_ASM_AARCH64_CRYPTO 1
 
 /* Defined if inline assembler supports AArch64 NEON instructions */
-/* #undef HAVE_GCC_INLINE_ASM_AARCH64_NEON */
+#define HAVE_GCC_INLINE_ASM_AARCH64_NEON 1
 
 /* Defined if inline assembler supports AVX instructions */
 /* #undef HAVE_GCC_INLINE_ASM_AVX */
@@ -201,19 +201,19 @@
 /* #undef HAVE_GCC_INLINE_ASM_AVX2 */
 
 /* Defined if inline assembler supports BMI2 instructions */
-#define HAVE_GCC_INLINE_ASM_BMI2 1
+/* #undef HAVE_GCC_INLINE_ASM_BMI2 */
 
 /* Defined if inline assembler supports NEON instructions */
 /* #undef HAVE_GCC_INLINE_ASM_NEON */
 
 /* Defined if inline assembler supports PCLMUL instructions */
-#define HAVE_GCC_INLINE_ASM_PCLMUL 1
+/* #undef HAVE_GCC_INLINE_ASM_PCLMUL */
 
 /* Defined if inline assembler supports SSE4.1 instructions */
-#define HAVE_GCC_INLINE_ASM_SSE41 1
+/* #undef HAVE_GCC_INLINE_ASM_SSE41 */
 
 /* Defined if inline assembler supports SSSE3 instructions */
-#define HAVE_GCC_INLINE_ASM_SSSE3 1
+/* #undef HAVE_GCC_INLINE_ASM_SSSE3 */
 
 /* Define to 1 if you have the `gethrtime' function. */
 /* #undef HAVE_GETHRTIME */
@@ -232,7 +232,7 @@
 
 /* Defined if underlying assembler is compatible with Intel syntax assembly
    implementations */
-#define HAVE_INTEL_SYNTAX_PLATFORM_AS 1
+/* #undef HAVE_INTEL_SYNTAX_PLATFORM_AS */
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1

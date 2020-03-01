@@ -44,11 +44,11 @@
 /* #undef HAVE_ATOMIC_SOLARIS */
 
 /* Define to 1 to use native atomic operations. */
-#define HAVE_ATOMIC_SUPPORT 1
+/* #undef HAVE_ATOMIC_SUPPORT */
 
 /* Define to 1 to use GCC and x86 or x86_64 assemlby language atomic
    operations. */
-#define HAVE_ATOMIC_X86_GCC_ASSEMBLY 1
+/* #undef HAVE_ATOMIC_X86_GCC_ASSEMBLY */
 
 /* Define to 1 if you have the `backtrace' function. */
 #define HAVE_BACKTRACE 1
@@ -252,7 +252,7 @@
 /* #undef HAVE_MUTEX_HPPA_MSEM_INIT */
 
 /* Define to 1 to use test-and-set mutexes with blocking mutexes. */
-#define HAVE_MUTEX_HYBRID 1
+/* #undef HAVE_MUTEX_HYBRID */
 
 /* Define to 1 to use the GCC compiler and IA64 assembly language mutexes. */
 /* #undef HAVE_MUTEX_IA64_GCC_ASSEMBLY */
@@ -330,7 +330,7 @@
 
 /* Define to 1 to use the GCC compiler and 64-bit x86 assembly language
    mutexes. */
-#define HAVE_MUTEX_X86_64_GCC_ASSEMBLY 1
+/* #undef HAVE_MUTEX_X86_64_GCC_ASSEMBLY */
 
 /* Define to 1 to use the GCC compiler and 32-bit x86 assembly language
    mutexes. */

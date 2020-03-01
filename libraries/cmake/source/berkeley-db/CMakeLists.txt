@@ -181,7 +181,6 @@ function(berkeleydbMain)
     "${library_root}/src/mutex/mut_pthread.c"
     "${library_root}/src/mutex/mut_region.c"
     "${library_root}/src/mutex/mut_stat.c"
-    "${library_root}/src/mutex/mut_tas.c"
     "${library_root}/src/common/openflags.c"
     "${library_root}/src/os/os_abort.c"
     "${library_root}/src/os/os_abs.c"
@@ -277,7 +276,6 @@ function(berkeleydbMain)
   target_compile_definitions(thirdparty_berkeley-db PRIVATE
     _GNU_SOURCE
     _REENTRANT
-    __atomic_compare_exchange=__atomic_compare_exchange_db
   )
 
   target_link_libraries(thirdparty_berkeley-db PUBLIC
