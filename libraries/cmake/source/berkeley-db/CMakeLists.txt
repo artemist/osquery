@@ -273,10 +273,20 @@ function(berkeleydbMain)
     "${library_root}/src/common/zerofill.c"
   )
 
+  if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    target_sources(thirdparty_berkeley-db PRIVATE
+      "${library_root}/src/mutex/mut_tas.c")  
+  endif()
+
   target_compile_definitions(thirdparty_berkeley-db PRIVATE
     _GNU_SOURCE
     _REENTRANT
   )
+
+  if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    target_compile_definitions(thirdparty_berkeley-db PRIVATE
+      __atomic_compare_exchange=__atomic_compare_exchange_db)
+  endif()
 
   target_link_libraries(thirdparty_berkeley-db PUBLIC
     thirdparty_sqlite
@@ -289,12 +299,12 @@ function(berkeleydbMain)
   target_include_directories(thirdparty_berkeley-db PRIVATE
     "${library_root}/lang/sql/adapter"
     "${library_root}/lang/sql/generated"
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/${CMAKE_SYSTEM_PROCESSOR}"
     "${library_root}/src"
   )
 
   target_include_directories(thirdparty_berkeley-db SYSTEM INTERFACE
-    "${CMAKE_CURRENT_SOURCE_DIR}/generated"
+    "${CMAKE_CURRENT_SOURCE_DIR}/generated/${CMAKE_SYSTEM_PROCESSOR}"
     "${library_root}/src"
   )
 endfunction()
