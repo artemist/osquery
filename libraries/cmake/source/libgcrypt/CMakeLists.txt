@@ -195,7 +195,7 @@ function(libgcryptMain)
 
     add_custom_command(
       OUTPUT "${asm_object}"
-      COMMAND ${CMAKE_C_COMPILER} -fno-integrated-as -DHAVE_CONFIG_H -O2 -g -DNDEBUG -fPIC -std=gnu11 -o "${asm_object}" -c "${asm_source}" "-I${CMAKE_CURRENT_SOURCE_DIR}/config"
+      COMMAND ${CMAKE_C_COMPILER} -fno-integrated-as -DHAVE_CONFIG_H -O2 -g -DNDEBUG -fPIC -std=gnu11 -o "${asm_object}" -c "${asm_source}" "-I${CMAKE_CURRENT_SOURCE_DIR}/config/${CMAKE_SYSTEM_PROCESSOR}"
       DEPENDS "${asm_source}"
       COMMENT "Assembling: ${asm_source}"
       VERBATIM
@@ -229,7 +229,7 @@ function(libgcryptMain)
   )
 
   target_include_directories(thirdparty_libgcrypt PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}/config"
+    "${CMAKE_CURRENT_SOURCE_DIR}/config/${CMAKE_SYSTEM_PROCESSOR}"
 
     "${library_root}/src"
     "${library_root}/mpi"

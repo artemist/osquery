@@ -275,7 +275,7 @@ function(berkeleydbMain)
 
   if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
     target_sources(thirdparty_berkeley-db PRIVATE
-      "${library_root}/src/mutex/mut_tas.c")  
+      "${library_root}/src/mutex/mut_tas.c")
   endif()
 
   target_compile_definitions(thirdparty_berkeley-db PRIVATE
